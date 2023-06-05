@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@picocss/pico": "^1.5.10",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
@@ -18,6 +19,7 @@
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-loader-spinner": "^5.3.4",
     "typescript": "5.0.4"
   }
 }
