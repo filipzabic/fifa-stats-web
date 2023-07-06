@@ -1,6 +1,7 @@
 'use client';
 import Card from './components/Card';
 import Nav from './components/Nav';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
 

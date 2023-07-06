@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
-import { ColorRing, Oval, ThreeDots } from 'react-loader-spinner';
 
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 export default function Card({ title, imgSrc }: Props) {
 
     const fetchData = async () => {
-        const data = await fetch("/api/nekaj",
+        const data = await fetch("/api/fetch-data",
                                     { 
                                         method: "POST", 
                                         body: JSON.stringify({ title: title.toLowerCase() }),
@@ -57,16 +56,7 @@ export default function Card({ title, imgSrc }: Props) {
                 <h3>{title}</h3>
                 <Image src={imgSrc} alt='' style={{borderRadius: "50%"}} width={200} height={500}/>
                 <h1>
-                    {isLoading ? <ThreeDots 
-                                    height="80" 
-                                    width="80" 
-                                    radius="9"
-                                    color="#4fa94d" 
-                                    ariaLabel="three-dots-loading"
-                                    wrapperStyle={{}}
-                                    visible={true}
-                                    />
-                    : score}
+                    {isLoading ? <p>Loading...</p> : score}
                 </h1>
                 <button onClick={Add}>+</button>
                 <button onClick={Subtract}>-</button>

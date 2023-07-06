@@ -1,7 +1,14 @@
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
+
 export default function Nav () {
 
-  
+  const router = useRouter()
 
+  const logOut = () => {
+    Cookies.remove('key');
+    router.replace('/login');
+  }
 
     return (
         <nav className="container">
@@ -9,7 +16,7 @@ export default function Nav () {
           <li><strong>FIFA Stats</strong></li>
         </ul>
         <ul>
-          <li><a href="/logout" role="button">Logout</a></li>
+          <li><a href='' onClick={logOut} role="button">Logout</a></li>
         </ul>
       </nav>
     )
