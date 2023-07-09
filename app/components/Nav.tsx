@@ -6,7 +6,8 @@ export default function Nav () {
   const router = useRouter()
 
   const logOut = () => {
-    Cookies.remove('key');
+    Cookies.remove('username');
+    Cookies.remove('password');
     router.replace('/login');
   }
 

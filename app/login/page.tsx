@@ -1,15 +1,13 @@
 'use client';
 import Cookies from 'js-cookie';
-import { useRouter } from 'next/navigation'
 
 export default function Login() {
 
-    const router = useRouter()
-
     const setCookie = async (event: any) => {
         event.preventDefault();
-        Cookies.set('key', event.target.password.value.toString())
-        router.push('/')
+        Cookies.set('username', event.target.username.value.toString())
+        Cookies.set('password', event.target.password.value.toString())
+        window.location.replace('/')
     }
 
     return (

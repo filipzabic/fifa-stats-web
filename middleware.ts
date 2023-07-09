@@ -2,11 +2,15 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const userToken = request.cookies.get('key')?.value;
+  const username = request.cookies.get('username')?.value;
+  const password = request.cookies.get('password')?.value;
 
-  if (userToken !== 'nekaj') {
-     return NextResponse.redirect(new URL('/login',request.url))
+  if (username === 'admin' && password === 'fifa') {
+     return NextResponse.next();
   }
+  
+  return NextResponse.redirect(new URL('/login', request.url));
+
 }
 
 export const config = {
